@@ -1,9 +1,14 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography'
+
 
 const FormQuestions = () => {
   return (
     <div>
-      Formulario
+      <Typography variant="h5" color="initial">
+        QUESTIONS
+      </Typography>
+      
     </div>
   );
 };
