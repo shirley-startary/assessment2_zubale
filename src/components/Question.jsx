@@ -1,26 +1,38 @@
 import React from 'react';
+import { 
+  Card, 
+  CardActionsArea, 
+  CardContent,Button,
+  Typography, 
+  CardActionArea} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const Question = ({elemento}) => {
   return (
-    <div>
-          <p>{elemento.question_type}</p>
-          core-availability-1
-          <p>Title:{elemento.title}</p>
-          <p>
-            Bucket: {elemento.question_config.bucket}
-          </p>
-          <p>
-            Attribute: {elemento.question_config.attribute_name}
-          </p>
-
-          <button>
-            Edit
-          </button>
-          <button>
-            Delete
-          </button>
-    </div>
+    <Card>
+      <CardContent>
+        <Typography>{elemento.question_config.slug}</Typography>
+        <Typography component="p" variant="h6" color="initial">
+          {elemento.question_type}
+        </Typography>
+        <Typography variant="h6" color="initial">
+          Title: {elemento.title}
+        </Typography>
+        <Typography variant="h6" color="initial">
+          Attribute: {elemento.question_config.attribute_name}
+        </Typography>
+        <Typography variant="h6" color="initial">
+          Bucket: {elemento.question_config.bucket}
+        </Typography>
+      </CardContent>
+      <CardActionArea>
+        <Button>Edit</Button>
+        <Button>Delete</Button>
+      </CardActionArea>
+    </Card>
   );
 };
 
-export default Question;
+export default withStyles({
+
+})(Question);

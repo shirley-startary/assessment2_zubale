@@ -7,7 +7,8 @@ import {
   FormControl, 
   InputLabel,
   InputAdornment,
-  Button
+  Button,
+  Container
 } from '@material-ui/core';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -58,8 +59,8 @@ const FormQuestions = () => {
   };
 
   return (
-    <div>
-      <Typography variant="h5" color="initial">
+    <Container maxWidth="xl">
+      <Typography variant="h6" color="initial">
         QUESTIONS
       </Typography>  
       <form className={classes.root} noValidate autoComplete="off">
@@ -101,7 +102,7 @@ const FormQuestions = () => {
           NEW QUESTIONS
         </Button>
       </form>
-    </div>
+    </Container>
   );
 };
 
