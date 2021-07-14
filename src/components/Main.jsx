@@ -14,10 +14,9 @@ const  Main = () => {
   return (
    
     <Container maxWidth="xl">
-      <Typography variant="h4" color="primary">
-        Form Admin
-      </Typography>
-          
+        <Typography variant="h4" color="primary">
+          Form Admin
+        </Typography>     
     </Container>
   );
 }
