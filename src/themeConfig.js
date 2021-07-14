@@ -6,6 +6,12 @@ const theme = createTheme({
       main: '#135BF1',
       dark: '#11008E'
     }
+  },
+
+  title:{
+    
+
   }
 })
+
 export default theme;

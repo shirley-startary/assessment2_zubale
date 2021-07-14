@@ -1,15 +1,14 @@
 import React from 'react';
 
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, ThemeProvider } from '@material-ui/core';
+import { makeStyles, ThemeProvider,Container } from '@material-ui/core';
 import theme from './themeConfig';
 
 import Navbar from './components/Navbar.jsx';
+import Main from './components/Main.jsx';
 
 const useStyle = makeStyles({
-  juanito:{
-    backgroundColor: 'red',
-  }
+
 })
 
 function App() {
@@ -17,12 +16,8 @@ function App() {
   return (
     <ThemeProvider theme= {theme}>
       <Navbar />
-      <div className={classes.juanito}>
-        <Typography variant="h1" color="initial">
-
-        </Typography>
-      </div>
-
+      <Main/>
+      
     </ThemeProvider>
   );
 }
