@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, withStyles, Container } from '@material-ui/core';
+import { Container } from '@material-ui/core';
+//import { makeStyles, withStyles } from '@material-ui/core';
 import Question from './Question.jsx';
 
-const useStyle = makeStyles({
-  background : {
-    background: "red",
-    padding:'16px 0 0 0',
-  }
-});
+// const useStyle = makeStyles({
+//   background : {
+//     background: "red",
+//     padding:'16px 0 0 0',
+//   }
+// });
 
 const ListQuestions = () => {
-  const classes = useStyle();
+  // const classes = useStyle();
   const [questions, setQuestions] = useState([]);
   useEffect(()=> {
     fetch('jsonData/frontend-questions.json')
@@ -29,8 +30,4 @@ const ListQuestions = () => {
   );
 };
 
-export default withStyles({
-  background : {
-    background: "red"
-  }
-})(ListQuestions);
+export default ListQuestions;

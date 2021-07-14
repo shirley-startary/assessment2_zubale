@@ -1,10 +1,11 @@
 import React from 'react';
 import { 
-  Card, 
-  CardActionsArea, 
-  CardContent,Button,
-  Typography, 
-  CardActionArea} from '@material-ui/core';
+  Card,  
+  CardContent,
+  CardActionArea,
+  Button,
+  Typography
+} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 const Question = ({elemento}) => {

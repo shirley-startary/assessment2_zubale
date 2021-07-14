@@ -4,7 +4,6 @@ import {
   makeStyles, 
   TextField, 
   MenuItem, 
-  FormControl, 
   InputLabel,
   InputAdornment,
   Button,
@@ -72,6 +71,7 @@ const FormQuestions = () => {
             id="standard-number"
             select
             type="Text"
+            value={currency}
             onChange={handleChange}
           >
             
