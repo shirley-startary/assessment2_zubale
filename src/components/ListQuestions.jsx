@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core';
 //import { makeStyles, withStyles } from '@material-ui/core';
 import Question from './Question.jsx';
@@ -10,16 +10,9 @@ import Question from './Question.jsx';
 //   }
 // });
 
-const ListQuestions = () => {
+const ListQuestions = ({questions}) => {
   // const classes = useStyle();
-  const [questions, setQuestions] = useState([]);
-  useEffect(()=> {
-    fetch('jsonData/frontend-questions.json')
-    .then(response => response.json())
-    .then(datos => {
-      setQuestions(datos.questions)
-    })
-  }, [])
+
 
   return (
       <Container maxWidth="xl">

@@ -12,6 +12,8 @@ import {
 
 import SearchIcon from '@material-ui/icons/Search';
 import AddCircleIcon from '@material-ui/icons/AddCircle'
+import { LensTwoTone } from '@material-ui/icons';
+import { useState } from 'react';
 
 const currencies = [
   {
@@ -49,13 +51,30 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const FormQuestions = () => {
+const FormQuestions = ({questions, handleQuestionsFilter}) => {
   const classes = useStyles();
-  const [currency, setCurrency] = React.useState('EUR');
+  const [questionType, setQuestionType] = React.useState('');
 
   const handleChange = (event) => {
-    setCurrency(event.target.value);
+    setQuestionType(event.target.value);
   };
+
+  const handleChangeName = (event) => {
+    // console.log(event.target.value)
+    // setQuestionName(event.target.value)
+    handleQuestionsFilter(event.target.value)
+  }
+
+  const filterQuestionType = () => {  
+    const unicos = [];
+    for(let i = 0; i < questions.length; i++) {
+      const elemento = questions[i].question_type;
+      if (!unicos.includes(questions[i].question_type)) {
+        unicos.push(elemento);
+      }
+    }
+    return unicos;
+  }
 
   return (
     <Container maxWidth="xl">
@@ -71,13 +90,13 @@ const FormQuestions = () => {
             id="standard-number"
             select
             type="Text"
-            value={currency}
+            value={questionType}
             onChange={handleChange}
           >
             
-            {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
+            {filterQuestionType().map((option, index) => (
+                <MenuItem key={index} value={option}>
+                  {option}
                 </MenuItem>
               ))}
           </TextField>
@@ -88,6 +107,8 @@ const FormQuestions = () => {
           </InputLabel>
           <TextField
             id="input-with-icon-textfield"
+            onChange={handleChangeName}
+            // value={questionName}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
